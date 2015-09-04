@@ -12,6 +12,12 @@ handlers:
 - url: /api/.*
   script: main.app
 
+- url: /import/.*
+  script: import.app
+
+- url: /importers/.*
+  script: import.app
+
 - url: (.*)/
   static_files: app\1/index.html
   upload: app
