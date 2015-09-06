@@ -24,7 +24,9 @@ class BBCImporter(Importer):
         links = []
         categories = self.soup.find("ul", {"class":"Categories"})
         for link in categories.findAll("a"):
-            links.append(link.get('href', ''))
+            href = link.get('href')
+            if isinstance(href, basestring):
+                links.append(href)
         return links
 
     def parse(self):

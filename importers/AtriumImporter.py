@@ -26,6 +26,6 @@ class AtriumImporter(Importer):
 
     def parse(self):
         for image in self.soup.findAll("img"):
-            name = image.get('alt', '')
+            name = image.get('alt')
             if isinstance(name, basestring):
                 self.shops.append(name)
