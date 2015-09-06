@@ -8,7 +8,7 @@ class AvionImporter(Importer):
     url = 'https://www.prague.avion.cz/cs-cz/store-locator'
 
     def parse(self):
-        for StoresList in self.soup.findAll("div",{"id":"allStoresList"}):
-        	for link in StoresList.findAll("a"):
-	            if isinstance(link.text, basestring):
-	                self.shops.append(link.text)
+        for storesList in self.soup.findAll("div",{"id":"allStoresList"}):
+            for link in storesList.findAll("a"):
+                if isinstance(link.text, basestring):
+                    self.shops.append(link.text)
