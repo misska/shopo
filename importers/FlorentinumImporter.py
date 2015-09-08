@@ -18,7 +18,7 @@ class FlorentinumImporter(Importer):
         for link in self.links:
             sock = urllib2.urlopen(link)
             html = sock.read()
-            self.soups.append(BeautifulSoup(html))
+            self.soups.append(BeautifulSoup(html, "html5lib"))
 
     def parse(self):
         for soup in self.soups:

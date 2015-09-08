@@ -18,7 +18,7 @@ class BBCImporter(Importer):
         for link in links:
             sock = urllib2.urlopen(link)
             html = sock.read()
-            self.soups.append(BeautifulSoup(html))
+            self.soups.append(BeautifulSoup(html, "html5lib"))
 
     def parseLinks(self):
         links = []

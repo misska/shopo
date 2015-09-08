@@ -13,7 +13,7 @@ class Importer(object):
     def download(self):
         sock = urllib2.urlopen(self.url)
         html = sock.read()
-        self.soup = BeautifulSoup(html)
+        self.soup = BeautifulSoup(html, "html5lib")
 
     def save(self):
         shoppingCentre = model.ShoppingCentre.query(model.ShoppingCentre.name == self.name.decode('utf-8')).fetch(1)[0]

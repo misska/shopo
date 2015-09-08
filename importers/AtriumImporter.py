@@ -22,7 +22,7 @@ class AtriumImporter(Importer):
         req = urllib2.Request(self.url, data)
         sock = urllib2.urlopen(req)
         html = sock.read()
-        self.soup = BeautifulSoup(html)
+        self.soup = BeautifulSoup(html, "html5lib")
 
     def parse(self):
         for image in self.soup.findAll("img"):
